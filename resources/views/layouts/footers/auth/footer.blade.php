@@ -7,7 +7,7 @@
                     <script>
                         document.write(new Date().getFullYear())
                     </script>
-                    made with  by
+                    realizado por
                     <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Homecare</a>
 
                 </div>

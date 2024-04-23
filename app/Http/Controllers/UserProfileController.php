@@ -15,7 +15,7 @@ class UserProfileController extends Controller
     public function update(Request $request)
     {
         $attributes = $request->validate([
-            'username' => ['required','max:255', 'min:2'],
+            'username' => ['required', 'max:255', 'min:2'],
             'firstname' => ['max:100'],
             'lastname' => ['max:100'],
             'email' => ['required', 'email', 'max:255',  Rule::unique('users')->ignore(auth()->user()->id),],
@@ -23,14 +23,21 @@ class UserProfileController extends Controller
             'city' => ['max:100'],
             'country' => ['max:100'],
             'postal' => ['max:100'],
-            'about' => ['max:255']
+            'about' => ['max:255'],
+            'tipoCedula' => 'required|max:255',
+            'numeroCedula' => 'required',
+            'fechaNacimiento' => 'required|max:255',
+            'tipoSangre' => 'required|max:255',
+            'estadoCivil' => 'required|max:255',
+            'genero' => 'required|max:255',
+
         ]);
 
         auth()->user()->update([
             'username' => $request->get('username'),
             'firstname' => $request->get('firstname'),
             'lastname' => $request->get('lastname'),
-            'email' => $request->get('email') ,
+            'email' => $request->get('email'),
             'address' => $request->get('address'),
             'city' => $request->get('city'),
             'country' => $request->get('country'),

@@ -27,7 +27,13 @@ class User extends Authenticatable
         'city',
         'country',
         'postal',
-        'about'
+        'about',
+        'tipo_Cedula',
+        'numero_Cedula',
+        'fecha_Nacimiento',
+        'tipo_Sangre',
+        'estado_Civil',
+        'genero'
     ];
 
     /**
@@ -53,8 +59,8 @@ class User extends Authenticatable
      * Always encrypt the password when it is updated.
      *
      * @param $value
-    * @return string
-    */
+     * @return string
+     */
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
