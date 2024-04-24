@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Citas;
 use Illuminate\Http\Request;
 
 class gestionCitasController extends Controller
@@ -10,9 +11,10 @@ class gestionCitasController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view('gestionUser.gestionCitas');
 
+    {
+
+        return view('gestionUser.gestionCitas');
     }
 
     /**
@@ -20,7 +22,6 @@ class gestionCitasController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -28,7 +29,21 @@ class gestionCitasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $citas = new Citas();
+        $citas->nombre = $request->nombre;
+        $citas->apellido = $request->apellido;
+        $citas->telefono = $request->telefono;
+        $citas->especialidad = $request->especialidad;
+        $citas->correo = $request->correo;
+        $citas->fechaNacimiento = $request->fechaNacimiento;
+        $citas->fechaCita = $request->fechaCita;
+        $citas->hora = $request->hora;
+        $citas->descripcion = $request->descripcion;
+
+        $citas->save();
+
+        return view('gestionUser.gestionCitas');
     }
 
     /**
