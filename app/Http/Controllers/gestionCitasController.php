@@ -13,8 +13,8 @@ class gestionCitasController extends Controller
     public function index()
 
     {
-
-        return view('gestionUser.gestionCitas');
+        $citas = Citas::all();
+        return view('gestionUser.gestionCitas', ['citas' => $citas]);
     }
 
     /**

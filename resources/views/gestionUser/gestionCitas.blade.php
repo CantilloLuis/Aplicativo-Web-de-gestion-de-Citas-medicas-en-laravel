@@ -95,17 +95,28 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Especialidad</th>
-                        <th scope="col">Hora</th>
+                        <th scope="col" align="center">Nombre</th>
+                        <th scope="col" align="center">Apellido</th>
+                        <th scope="col" align="center">Telefono</th>
+                        <th scope="col" align="center">Especialidad</th>
+                        <th scope="col" align="center">Fecha cita</th>
+                        <th scope="col" align="center">Hora</th>
+                        <th scope="col" align="center">Descripcion</th>
+
+
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        @foreach($citas as $cita)
+                        <td align="center">{{$cita->nombre}}</td>
+                        <td align="center">{{$cita->apellido}}</td>
+                        <td align="center">{{$cita->telefono}}</td>
+                        <td align="center">{{$cita->especialidad}}</td>
+                        <td align="center">{{$cita->fechaCita}}</td>
+                        <td align="center">{{$cita->hora}}</td>
+                        <td align="center">{{$cita->descripcion}}</td>
+                        @endforeach
                     </tr>
                 </tbody>
             </table>
