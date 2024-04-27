@@ -10,6 +10,7 @@ class Citas extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'nombre',
         'apellido',
         'telefono',

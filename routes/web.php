@@ -45,6 +45,7 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middle
 Route::get('/vista', [vistaController::class, 'index'])->name('vista');
 Route::get('/gestionCitas', [gestionCitasController::class, 'index'])->name('gestionCitas');
 Route::post('/registrarCita', [gestionCitasController::class, 'store'])->name('registrarCitas');
+Route::delete('/eliminarCitas/{id}', [gestionCitasController::class, 'destroy'])->name('eliminarCitas');
 
 
 

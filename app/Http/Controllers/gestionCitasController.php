@@ -14,7 +14,7 @@ class gestionCitasController extends Controller
 
     {
         $citas = Citas::all();
-        return view('gestionUser.gestionCitas', ['citas' => $citas]);
+        return view('gestionUser.gestionCitas', compact('citas'));
     }
 
     /**
@@ -43,7 +43,7 @@ class gestionCitasController extends Controller
 
         $citas->save();
 
-        return view('gestionUser.gestionCitas');
+        return redirect()->route('gestionCitas');
     }
 
     /**
@@ -73,8 +73,15 @@ class gestionCitasController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        // Encuentra el objeto a eliminar
+        $eliminarCitas = Citas::findOrFail($id);
+
+        // Elimina el objeto de la base de datos
+        $eliminarCitas->delete();
+
+        // Redireccionar a una ruta específica (opcional)
+        return redirect()->route('gestionCitas');
     }
 }
