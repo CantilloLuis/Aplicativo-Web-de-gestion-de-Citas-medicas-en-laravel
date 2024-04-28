@@ -23,6 +23,10 @@
                                     Rol</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                     Especialidad</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Editar</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,6 +37,20 @@
                                 <td class="align-middle text-center text-sm">{{$usuario->numero_cedula}}</td>
                                 <td class="align-middle text-center text-sm">{{$usuario->rol}}</td>
                                 <td class="align-middle text-center text-sm">{{$usuario->especialidad}}</td>
+                                <td class="align-middle text-center text-sm">
+                                    <button type="submit" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editarUsuario{{$usuario->id}}">
+                                        Editar Usuario
+                                    </button>
+                                    @include('gestionUser.editarUsuario')
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <form method="POST" action="{{url('/eliminarUsuario' . '/' . $usuario->id)}}">
+                                        {{method_field('DELETE')}}
+                                        {{csrf_field('DELETE')}}
+
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

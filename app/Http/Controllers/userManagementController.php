@@ -53,10 +53,10 @@ class userManagementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $editarCitas = Citas::findOrFail($id);
+        $editarUsuarios = User::findOrFail($id);
         $input = $request->all();
-        $editarCitas->fill($input)->save();
-        return redirect()->route('gestionCitas');
+        $editarUsuarios->fill($input)->save();
+        return redirect()->route('usuarios');
     }
 
     /**
@@ -65,12 +65,12 @@ class userManagementController extends Controller
     public function destroy($id)
     {
         // Encuentra el objeto a eliminar
-        $eliminarCitas = Citas::findOrFail($id);
+        $eliminarUsuarios = User::findOrFail($id);
 
         // Elimina el objeto de la base de datos
-        $eliminarCitas->delete();
+        $eliminarUsuarios->delete();
 
         // Redireccionar a una ruta específica (opcional)
-        return redirect()->route('gestionCitas');
+        return redirect()->route('usuarios');
     }
 }

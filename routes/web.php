@@ -50,6 +50,8 @@ Route::post('/registrarCita', [gestionCitasController::class, 'store'])->name('r
 Route::delete('/eliminarCitas/{id}', [gestionCitasController::class, 'destroy'])->name('eliminarCitas');
 Route::resource('/actualizarCitas', gestionCitasController::class);
 Route::get('/gestionUsuarios', [userManagementController::class, 'index'])->name('usuarios');
+Route::delete('/eliminarUsuario/{id}', [userManagementController::class, 'destroy'])->name('eliminarUsuario');
+Route::resource('/actualizarUsuario', userManagementController::class);
 
 
 
