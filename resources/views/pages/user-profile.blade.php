@@ -54,8 +54,11 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card">
-                <form role="form" method="POST" action={{ route('profile.update') }} enctype="multipart/form-data">
-                    @csrf
+                <form role="form" method="POST" action="{{route('actualizarProfile.update',auth()->user()->id)}}" enctype="multipart/form-data">
+
+                    {!! csrf_field()!!}
+                    {{ method_field('PUT') }}
+
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center">
                             <p class="mb-0">Editar perfil</p>

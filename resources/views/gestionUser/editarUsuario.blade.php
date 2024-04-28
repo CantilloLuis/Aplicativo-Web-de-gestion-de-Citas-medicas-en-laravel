@@ -21,7 +21,6 @@
                                 <option value="" disabled selected>Seleccione el rol del usuario</option>
                                 <option value="Doctor">Doctor</option>
                                 <option value="Paciente">Paciente</option>
-                                <option value="Enfermera">Enfermera</option>
                             </select>
                         </div>
                     </div>

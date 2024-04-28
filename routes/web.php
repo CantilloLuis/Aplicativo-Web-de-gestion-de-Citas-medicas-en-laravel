@@ -24,6 +24,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
+use App\Http\Controllers\doctorController;
 use App\Http\Controllers\vistaController;
 use App\Http\Controllers\gestionCitasController;
 use App\Http\Controllers\userManagementController;
@@ -52,6 +53,11 @@ Route::resource('/actualizarCitas', gestionCitasController::class);
 Route::get('/gestionUsuarios', [userManagementController::class, 'index'])->name('usuarios');
 Route::delete('/eliminarUsuario/{id}', [userManagementController::class, 'destroy'])->name('eliminarUsuario');
 Route::resource('/actualizarUsuario', userManagementController::class);
+Route::resource('/actualizarProfile', userProfileController::class);
+Route::get('/doctor', [doctorController::class, 'index'])->name('doctor');
+
+
+
 
 
 

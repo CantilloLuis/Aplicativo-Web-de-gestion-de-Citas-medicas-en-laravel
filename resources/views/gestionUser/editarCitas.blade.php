@@ -40,6 +40,11 @@
                         </select>
                     </div>
 
+                    <div class="col-md-6">
+                        <label for="cedula" class="form-label">Cedula: <span style="color: red;">*</span></label>
+                        <input type="number" value="{{$cita->cedula}}" name="cedula" id="telefono" class="form-control" placeholder="Ingrese su número de cedula" required>
+                    </div>
+
                     <div class="col-12">
                         <label for="email" class="form-label">Correo Electrónico <span style="color: red;">*</span></label>
                         <input type="email" name="correo" placeholder="Ingrese sus correo" class="form-control" id="email" required value="{{$cita->correo}}">
