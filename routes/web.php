@@ -26,6 +26,8 @@ use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\vistaController;
 use App\Http\Controllers\gestionCitasController;
+use App\Http\Controllers\userManagementController;
+
 
 
 
@@ -46,6 +48,10 @@ Route::get('/vista', [vistaController::class, 'index'])->name('vista');
 Route::get('/gestionCitas', [gestionCitasController::class, 'index'])->name('gestionCitas');
 Route::post('/registrarCita', [gestionCitasController::class, 'store'])->name('registrarCitas');
 Route::delete('/eliminarCitas/{id}', [gestionCitasController::class, 'destroy'])->name('eliminarCitas');
+Route::resource('/actualizarCitas', gestionCitasController::class);
+Route::get('/gestionUsuarios', [userManagementController::class, 'index'])->name('usuarios');
+
+
 
 
 

@@ -18,11 +18,13 @@ return new class extends Migration
             $table->string('username');
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
-            $table->string('tipo_Cedula')->nullable();
-            $table->bigInteger('numero_Cedula')->nullable();
-            $table->string('fecha_Nacimiento')->nullable();
-            $table->string('tipo_Sangre')->nullable();
-            $table->string('estado_Civil')->nullable();
+            $table->string('rol')->nullable();
+            $table->string('especialidad')->nullable();
+            $table->string('tipo_cedula')->nullable();
+            $table->bigInteger('numero_cedula')->nullable();
+            $table->string('fecha_nacimiento')->nullable();
+            $table->string('tipo_sangre')->nullable();
+            $table->string('estado_civil')->nullable();
             $table->string('genero')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

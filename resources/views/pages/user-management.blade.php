@@ -15,82 +15,26 @@
                     <table class="table align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Rol
-                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Apellido</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    Fecha de creacion</th>
+                                    # Cedula</th>
                                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                    Acciones</th>
+                                    Rol</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Especialidad</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($usuarios as $usuario)
                             <tr>
-                                <td>
-                                    <div class="d-flex px-3 py-1">
-
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">Luis Cantillo</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="text-sm font-weight-bold mb-0">Admin</p>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <p class="text-sm font-weight-bold mb-0">22/03/2024</p>
-                                </td>
-                                <td class="align-middle text-end">
-                                    <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                        <p class="text-sm font-weight-bold mb-0">Editar</p>
-                                        <p class="text-sm font-weight-bold mb-0 ps-2">Eliminar</p>
-                                    </div>
-                                </td>
+                                <td class="align-middle text-center text-sm">{{$usuario->firstname}}</td>
+                                <td class="align-middle text-center text-sm">{{$usuario->lastname}}</td>
+                                <td class="align-middle text-center text-sm">{{$usuario->numero_cedula}}</td>
+                                <td class="align-middle text-center text-sm">{{$usuario->rol}}</td>
+                                <td class="align-middle text-center text-sm">{{$usuario->especialidad}}</td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-3 py-1">
-
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">Jesus Perez</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="text-sm font-weight-bold mb-0">Paciente</p>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <p class="text-sm font-weight-bold mb-0">2/03/2024</p>
-                                </td>
-                                <td class="align-middle text-end">
-                                    <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                        <p class="text-sm font-weight-bold mb-0">Editar</p>
-                                        <p class="text-sm font-weight-bold mb-0 ps-2">Eliminar</p>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex px-3 py-1">
-
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm">Angel Ortega</h6>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <p class="text-sm font-weight-bold mb-0">Doctor</p>
-                                </td>
-                                <td class="align-middle text-center text-sm">
-                                    <p class="text-sm font-weight-bold mb-0">1/03/2024</p>
-                                </td>
-                                <td class="align-middle text-end">
-                                    <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                        <p class="text-sm font-weight-bold mb-0">Editar</p>
-                                        <p class="text-sm font-weight-bold mb-0 ps-2">Eliminar</p>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -45,7 +45,7 @@
                                         <div class="flex flex-col mb-3">
                                             <label for="">Tipo de cedula</label>
 
-                                            <select name="tipo_Cedula" class="form-control" required>
+                                            <select name="tipo_cedula" class="form-control" required>
                                                 <option value="" disabled selected>Seleccione su tipo de Cédula</option>
                                                 <option value="CC">Cédula de Ciudadanía</option>
                                                 <option value="TI">Tarjeta de Identidad</option>
@@ -57,7 +57,7 @@
                                         <div class="flex flex-col mb-3">
                                             <label for=""># Cedula</label>
 
-                                            <input type="number" value="{{ old('numeroCedula') }}" name="numero_Cedula" class="form-control" placeholder="Cedula" aria-label="Cédula" required>
+                                            <input type="number" value="{{ old('numeroCedula') }}" name="numero_cedula" class="form-control" placeholder="Cedula" aria-label="Cédula" required>
                                         </div>
                                     </div>
                                 </div>
@@ -66,13 +66,13 @@
                                     <div class="col">
                                         <div class="flex flex-col mb-3">
                                             <label for="">Fecha de nacimiento</label>
-                                            <input type="date" value="{{ old('fechaNacimiento') }}" name="fecha_Nacimiento" class="form-control" id="fecha_nacimiento" placeholder="Fecha de nacimiento" aria-label="Fecha de nacimiento" required>
+                                            <input type="date" value="{{ old('fechaNacimiento') }}" name="fecha_nacimiento" class="form-control" id="fecha_nacimiento" placeholder="Fecha de nacimiento" aria-label="Fecha de nacimiento" required>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="flex flex-col mb-3">
                                             <label for="tipo_sangre">Tipo de sangre</label>
-                                            <select name="tipo_Sangre" class="form-control" id="tipo_sangre" required>
+                                            <select name="tipo_sangre" class="form-control" id="tipo_sangre" required>
                                                 <option value="" disabled selected>Seleccione su tipo de sangre</option>
                                                 <option value="A+">A+</option>
                                                 <option value="A-">A-</option>
@@ -91,7 +91,7 @@
                                     <div class="col">
                                         <div class="flex flex-col mb-3">
                                             <label for="estado_civil">Estado civil</label>
-                                            <select name="estado_Civil" class="form-control" id="estado_civil" required>
+                                            <select name="estado_civil" class="form-control" id="estado_civil" required>
                                                 <option value="" disabled selected>Seleccione su estado civil</option>
                                                 <option value="Soltero">Soltero</option>
                                                 <option value="Casado">Casado</option>

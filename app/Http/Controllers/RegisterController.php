@@ -21,11 +21,11 @@ class RegisterController extends Controller
             'firstname' => 'required|max:255',
             'lastname' => 'required|max:255',
             'terms' => 'required',
-            'tipo_Cedula' => 'required|max:255',
-            'numero_Cedula' => 'required',
-            'fecha_Nacimiento' => 'required|max:255',
-            'tipo_Sangre' => 'required|max:255',
-            'estado_Civil' => 'required|max:255',
+            'tipo_cedula' => 'required|max:255',
+            'numero_cedula' => 'required',
+            'fecha_nacimiento' => 'required|max:255',
+            'tipo_sangre' => 'required|max:255',
+            'estado_civil' => 'required|max:255',
             'genero' => 'required|max:255',
 
         ]);

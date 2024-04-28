@@ -21,6 +21,8 @@ class User extends Authenticatable
         'username',
         'firstname',
         'lastname',
+        'rol',
+        'especialidad',
         'email',
         'password',
         'address',
@@ -28,11 +30,11 @@ class User extends Authenticatable
         'country',
         'postal',
         'about',
-        'tipo_Cedula',
-        'numero_Cedula',
-        'fecha_Nacimiento',
-        'tipo_Sangre',
-        'estado_Civil',
+        'tipo_cedula',
+        'numero_cedula',
+        'fecha_nacimiento',
+        'tipo_sangre',
+        'estado_civil',
         'genero'
     ];
 

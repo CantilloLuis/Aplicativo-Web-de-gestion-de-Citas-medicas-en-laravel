@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Citas;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class gestionCitasController extends Controller
+class userManagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,8 @@ class gestionCitasController extends Controller
     public function index()
 
     {
-        $citas = Citas::all();
-        return view('gestionUser.gestionCitas', compact('citas'));
+        $usuarios = User::all();
+        return view('pages.user-management', compact('usuarios'));
     }
 
     /**
@@ -29,21 +30,6 @@ class gestionCitasController extends Controller
      */
     public function store(Request $request)
     {
-
-        $citas = new Citas();
-        $citas->nombre = $request->nombre;
-        $citas->apellido = $request->apellido;
-        $citas->telefono = $request->telefono;
-        $citas->especialidad = $request->especialidad;
-        $citas->correo = $request->correo;
-        $citas->fechaNacimiento = $request->fechaNacimiento;
-        $citas->fechaCita = $request->fechaCita;
-        $citas->hora = $request->hora;
-        $citas->descripcion = $request->descripcion;
-
-        $citas->save();
-
-        return redirect()->route('gestionCitas');
     }
 
     /**

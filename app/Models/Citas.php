@@ -19,6 +19,6 @@ class Citas extends Model
         'fechaNacimiento',
         'fechaCita',
         'hora',
-        'description'
+        'descripcion'
     ];
 }
