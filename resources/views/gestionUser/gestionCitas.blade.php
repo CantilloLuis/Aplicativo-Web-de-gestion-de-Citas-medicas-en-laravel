@@ -7,6 +7,8 @@
 
 
 <div class="container">
+    <h3 class="">Su nombre es: {{Auth::user()->firstname}} {{Auth::user()->lastname}}</h3>
+    <br>
     <button type="submit" class="btn btn-primary btn-lg" style="display: block; margin: 0 auto;" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Agendar tu cita
     </button>
@@ -104,8 +106,6 @@
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Apellido
                             </th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Telefono</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Especialidad</th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Fecha cita</th>
@@ -125,7 +125,6 @@
                         <tr>
                             <td class="align-middle text-center text-sm">{{$cita->nombre}}</td>
                             <td class="align-middle text-center text-sm">{{$cita->apellido}}</td>
-                            <td class="align-middle text-center text-sm">{{$cita->telefono}}</td>
                             <td class="align-middle text-center text-sm">{{$cita->especialidad}}</td>
                             <td class="align-middle text-center text-sm">{{$cita->fechaCita}}</td>
                             <td class="align-middle text-center text-sm">{{$cita->hora}}</td>
@@ -151,6 +150,22 @@
             </div>
         </div>
     </div>
+
+    <div class="card mb-4">
+        <h2 class="text-center">Citas evaluadas</h2>
+        <div class="card-body px-0 pt-0 pb-2">
+            @foreach($doctors as $doctor)
+            @if($doctor->cedula_paciente == Auth::user()->numero_cedula)
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Medico que lo atendio: {{$doctor->nombre_doctor}}</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">{{$doctor->evaluacion_doctor}}</textarea>
+            </div>
+
+            @endif
+            @endforeach
+        </div>
+    </div>
+
 
     @include('layouts.footers.auth.footer')
 </div>

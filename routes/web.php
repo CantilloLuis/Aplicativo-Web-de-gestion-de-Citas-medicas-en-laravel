@@ -55,6 +55,11 @@ Route::delete('/eliminarUsuario/{id}', [userManagementController::class, 'destro
 Route::resource('/actualizarUsuario', userManagementController::class);
 Route::resource('/actualizarProfile', userProfileController::class);
 Route::get('/doctor', [doctorController::class, 'index'])->name('doctor');
+Route::delete('/eliminarCita_con_Doctor/{id}', [doctorController::class, 'destroy'])->name('eliminarCitaDoctor');
+Route::resource('/actualizarCita_con_Doctor', doctorController::class);
+Route::post('/registrarCitaMedico', [doctorController::class, 'store'])->name('registrarCitaMedico');
+Route::get('/datosCitas', [gestionCitasController::class, 'getCitas'])->name('datosCitas');
+
 
 
 

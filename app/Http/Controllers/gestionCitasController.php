@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Citas;
+use App\Models\Doctor;
+
 use Illuminate\Http\Request;
 
 class gestionCitasController extends Controller
@@ -14,7 +16,9 @@ class gestionCitasController extends Controller
 
     {
         $citas = Citas::all();
-        return view('gestionUser.gestionCitas', compact('citas'));
+        $doctors = Doctor::all();
+
+        return view('gestionUser.gestionCitas', ['citas' => $citas, 'doctors' => $doctors]);
     }
 
     /**
@@ -87,5 +91,16 @@ class gestionCitasController extends Controller
 
         // Redireccionar a una ruta específica (opcional)
         return redirect()->route('gestionCitas');
+    }
+
+    public function getCitas(Request $request)
+    {
+        $cedula = $request->input('cedula_paciente'); // Obtén la cédula del paciente seleccionado desde la solicitud
+
+        // Busca el paciente en base a la cédula
+        $paciente = Citas::where('cedula', $cedula)->first();
+
+        // Devuelve los datos del paciente en formato JSON
+        return response()->json(['datosPaciente' => $paciente]);
     }
 }
