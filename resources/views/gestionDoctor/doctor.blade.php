@@ -31,7 +31,9 @@
                             <select name="paciente" class="form-control" id="paciente" required>
                                 <option value="" disabled selected>Seleccione el paciente</option>
                                 @foreach($citas as $cita)
+                                @if($cita->especialidad == Auth::user()->especialidad)
                                 <option value="{{$cita->cedula}}">{{$cita->nombre}} {{$cita->apellido}}</option>
+                                @endif
                                 @endforeach
 
                             </select>

@@ -46,10 +46,10 @@
                             <label for="especialidad" class="form-label">Especialidad: <span style="color: red;">*</span></label>
                             <select class="form-select" name="especialidad" id="especialidad" required>
                                 <option value="">Selecciona una especialidad</option>
-                                <option value="medicina_general">Medicina General</option>
-                                <option value="pediatria">Pediatría</option>
-                                <option value="dermatologia">Dermatología</option>
-                                <option value="fisioterapeuta">Fisioterapeuta</option>
+                                <option value="Medicina general">Medicina General</option>
+                                <option value="Pediatria">Pediatría</option>
+                                <option value="Dermatologia">Dermatología</option>
+                                <option value="Fisioterapeuta">Fisioterapeuta</option>
                             </select>
                         </div>
 
@@ -157,6 +157,7 @@
             @foreach($doctors as $doctor)
             @if($doctor->cedula_paciente == Auth::user()->numero_cedula)
             <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Descripcion de la cita con el medico: {{$doctor->descripcion_paciente}}</label><br>
                 <label for="exampleFormControlTextarea1" class="form-label">Medico que lo atendio: {{$doctor->nombre_doctor}}</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">{{$doctor->evaluacion_doctor}}</textarea>
             </div>

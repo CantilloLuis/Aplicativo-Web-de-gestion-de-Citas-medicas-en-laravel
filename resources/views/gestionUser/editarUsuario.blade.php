@@ -32,7 +32,7 @@
                             <label for="especialidad">Seleccione especialidad</label>
                             <select class="form-select" name="especialidad" id="especialidad" required>
                                 <option value="" disabled selected>Seleccione la especialidad del usuario</option>
-                                <option value="Medicina_general">Medicina General</option>
+                                <option value="Medicina general">Medicina General</option>
                                 <option value="Pediatria">Pediatría</option>
                                 <option value="Dermatologia">Dermatología</option>
                                 <option value="Fisioterapeuta">Fisioterapeuta</option>
