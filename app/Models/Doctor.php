@@ -22,6 +22,5 @@ class Doctor extends Model
         'hora_cita_paciente',
         'descripcion_paciente',
         'evaluacion_doctor'
-
     ];
 }

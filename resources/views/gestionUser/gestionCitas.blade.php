@@ -5,7 +5,6 @@
 <br>
 <br>
 
-
 <div class="container">
     <h3 class="">Su nombre es: {{Auth::user()->firstname}} {{Auth::user()->lastname}}</h3>
     <br>
@@ -73,17 +72,12 @@
                             <input type="date" class="form-control" name="fechaCita" id="fecha_reserva" name="fecha_reserva" required>
                         </div>
 
-
                         <div class="col-12">
                             <label for="hora" class="form-label">Hora <span style="color: red;">*</span></label>
                             <input type="time" class="form-control" name="hora" id="hora" name="hora" required>
                         </div>
-
-
-
                         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripcion</label>
                         <textarea id="message" rows="4" name="descripcion" required class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Escriba sus sintomas"></textarea>
-
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -150,7 +144,6 @@
             </div>
         </div>
     </div>
-
     <div class="card mb-4">
         <h2 class="text-center">Citas evaluadas</h2>
         <div class="card-body px-0 pt-0 pb-2">
@@ -161,13 +154,10 @@
                 <label for="exampleFormControlTextarea1" class="form-label">Medico que lo atendio: {{$doctor->nombre_doctor}}</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">{{$doctor->evaluacion_doctor}}</textarea>
             </div>
-
             @endif
             @endforeach
         </div>
     </div>
-
-
     @include('layouts.footers.auth.footer')
 </div>
 @endsection

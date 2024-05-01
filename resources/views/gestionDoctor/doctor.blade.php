@@ -5,7 +5,6 @@
 <br>
 <br>
 
-
 <div class="container">
     <h3>Citas agendadas con el medico {{Auth::user()->firstname}}</h3>
     <br>
@@ -35,7 +34,6 @@
                                 <option value="{{$cita->cedula}}">{{$cita->nombre}} {{$cita->apellido}}</option>
                                 @endif
                                 @endforeach
-
                             </select>
                         </div>
                         <div class="col-md-6">

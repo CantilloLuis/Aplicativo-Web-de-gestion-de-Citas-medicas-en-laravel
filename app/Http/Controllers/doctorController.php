@@ -16,7 +16,6 @@ class doctorController extends Controller
     {
         $doctors = Doctor::all();
         $citas = Citas::all();
-
         return view('gestionDoctor.doctor', ['citas' => $citas, 'doctors' => $doctors]);
     }
 

@@ -17,7 +17,6 @@ class gestionCitasController extends Controller
     {
         $citas = Citas::all();
         $doctors = Doctor::all();
-
         return view('gestionUser.gestionCitas', ['citas' => $citas, 'doctors' => $doctors]);
     }
 
