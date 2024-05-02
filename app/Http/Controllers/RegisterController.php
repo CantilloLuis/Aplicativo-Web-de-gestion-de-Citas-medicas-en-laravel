@@ -27,7 +27,6 @@ class RegisterController extends Controller
             'tipo_sangre' => 'required|max:255',
             'estado_civil' => 'required|max:255',
             'genero' => 'required|max:255',
-
         ]);
         $user = User::create($attributes);
         auth()->login($user);
