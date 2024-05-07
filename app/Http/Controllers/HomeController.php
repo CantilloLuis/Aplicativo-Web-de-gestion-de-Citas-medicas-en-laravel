@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Citas;
+use App\Models\User;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard');
+        $citas = Citas::count();
+        $usuariosDoctores = User::where('rol', 'Doctor')->count();
+        $usuariosPacientes = User::where('rol', 'Paciente')->count();
+
+        return view('pages.dashboard', ['citas' => $citas, 'usuariosDoctores' => $usuariosDoctores, 'usuariosPacientes' => $usuariosPacientes]);
     }
 }

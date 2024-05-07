@@ -30,7 +30,7 @@
                     <div class="col">
                         <div class="flex flex-col mb-3">
                             <label for="especialidad">Seleccione especialidad</label>
-                            <select class="form-select" name="especialidad" id="especialidad" required>
+                            <select class="form-select" name="especialidad" id="especialidad">
                                 <option value="" disabled selected>Seleccione la especialidad del usuario</option>
                                 <option value="Medicina general">Medicina General</option>
                                 <option value="Pediatria">Pediatría</option>

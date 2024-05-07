@@ -15,7 +15,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0  font-weight-bold">Pacientes</p>
                                 <h5 class="font-weight-bolder">
-                                    32
+                                    {{$usuariosPacientes}}
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-success text-sm font-weight-bolder">9%</span> desde <br> ayer
@@ -39,7 +39,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0  font-weight-bold"> Medicos</p>
                                 <h5 class="font-weight-bolder">
-                                    12
+                                    {{$usuariosDoctores}}
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-success text-sm font-weight-bolder">4%</span> semana pasada
@@ -63,7 +63,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0  font-weight-bold">Especialidades</p>
                                 <h5 class="font-weight-bolder">
-                                    31
+                                    5
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-success text-sm font-weight-bolder">10%</span> ultimo trimestre
@@ -87,7 +87,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0  font-weight-bold">Citas</p>
                                 <h5 class="font-weight-bolder">
-                                    2400
+                                    {{$citas}}
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-success text-sm font-weight-bolder">+5%</span> mes <br> pasado
