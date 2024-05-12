@@ -63,6 +63,11 @@
                         </div>
 
                         <div class="col-12">
+                            <label for="direccion" class="form-label">Direccion <span style="color: red;">*</span></label>
+                            <input type="text" name="direccion" placeholder="Ingrese su direccion" class="form-control" id="direccion" required>
+                        </div>
+
+                        <div class="col-12">
                             <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento <span style="color: red;">*</span></label>
                             <input type="date" name="fechaNacimiento" class="form-control" id="fecha_nacimiento" required>
                         </div>
@@ -116,6 +121,7 @@
                     </thead>
                     <tbody>
                         @foreach($citas as $cita)
+                        @if($cita->cedula == Auth::user()->numero_cedula)
                         <tr>
                             <td class="align-middle text-center text-sm">{{$cita->nombre}}</td>
                             <td class="align-middle text-center text-sm">{{$cita->apellido}}</td>
@@ -138,6 +144,7 @@
                                 </form>
                             </td>
                         </tr>
+                        @endif
                         @endforeach
                     </tbody>
                 </table>

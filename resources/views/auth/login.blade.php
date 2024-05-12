@@ -25,7 +25,7 @@
                                     @csrf
                                     @method('post')
                                     <div class="flex flex-col mb-3">
-                                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email"  value="{{ old('email')}}">
+                                        <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email" value="{{ old('email')}}">
                                         @error('email') <p class="text-danger text-xs pt-1"> {{$message}} </p>@enderror
                                     </div>
 
@@ -43,12 +43,12 @@
                                     </div>
                                 </form>
                             </div>
-                            {{-- <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                            <!-- <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                 <p class="mb-1 text-sm mx-auto">
                                     ¿Olvidaste tu contraseña? Restablecer su contraseña
                                     <a href="{{ route('reset-password') }}" class="text-primary text-gradient font-weight-bold">aquí</a>
                                 </p>
-                            </div> --}}
+                            </div> -->
                             <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                 <p class="mb-4 text-sm mx-auto">
                                     ¿No tienes una cuenta?

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 // use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 
@@ -30,7 +32,20 @@ class RegisterController extends Controller
         ]);
         $user = User::create($attributes);
         auth()->login($user);
+        if (Auth::user()->username == 'Admin' || Auth::user()->username == 'Administrador' || Auth::user()->username == 'administrador' || Auth::user()->username == 'admin') {
 
-        return redirect('/dashboard');
+            return redirect('/dashboard');
+        }
+
+        if (Auth::user()->rol == 'Paciente') {
+
+            return redirect('/gestionCitas');
+        }
+
+        if (Auth::user()->rol == 'Doctor') {
+
+            return redirect('/doctor');
+        }
+        return redirect('/gestionCitas');
     }
 }

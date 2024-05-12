@@ -28,8 +28,20 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $request->session()->regenerate();
+            if (Auth::user()->username == 'Admin' || Auth::user()->username == 'Administrador' || Auth::user()->username == 'administrador' || Auth::user()->username == 'admin') {
 
-            return redirect()->intended('dashboard');
+                return redirect()->intended('dashboard');
+            }
+
+            if (Auth::user()->rol == 'Paciente') {
+
+                return redirect()->intended('gestionCitas');
+            }
+
+            if (Auth::user()->rol == 'Doctor') {
+
+                return redirect()->intended('doctor');
+            }
         }
 
         return back()->withErrors([

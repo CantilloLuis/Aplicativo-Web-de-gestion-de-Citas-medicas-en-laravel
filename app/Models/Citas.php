@@ -17,6 +17,7 @@ class Citas extends Model
         'especialidad',
         'cedula',
         'correo',
+        'direccion',
         'fechaNacimiento',
         'fechaCita',
         'hora',

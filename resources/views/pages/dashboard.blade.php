@@ -63,7 +63,7 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0  font-weight-bold">Especialidades</p>
                                 <h5 class="font-weight-bolder">
-                                    5
+                                    4
                                 </h5>
                                 <p class="mb-0">
                                     <span class="text-success text-sm font-weight-bolder">10%</span> ultimo trimestre

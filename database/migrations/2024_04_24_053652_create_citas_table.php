@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('especialidad')->nullable();
             $table->bigInteger('cedula')->nullable();
             $table->string('correo')->nullable();
+            $table->string('direccion')->nullable();
             $table->string('fechaNacimiento')->nullable();
             $table->string('fechaCita')->nullable();
             $table->string('hora')->nullable();

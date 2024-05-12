@@ -40,6 +40,7 @@ class gestionCitasController extends Controller
         $citas->especialidad = $request->especialidad;
         $citas->cedula = $request->cedula;
         $citas->correo = $request->correo;
+        $citas->direccion = $request->direccion;
         $citas->fechaNacimiento = $request->fechaNacimiento;
         $citas->fechaCita = $request->fechaCita;
         $citas->hora = $request->hora;

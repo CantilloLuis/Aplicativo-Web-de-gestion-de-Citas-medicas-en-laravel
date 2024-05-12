@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nombre_paciente')->nullable();
             $table->string('apellido_paciente')->nullable();
             $table->string('correo_paciente')->nullable();
+            $table->string('direccion_paciente')->nullable();
             $table->string('telefono_paciente')->nullable();
             $table->string('especialidad_paciente')->nullable();
             $table->string('cedula_paciente')->nullable();

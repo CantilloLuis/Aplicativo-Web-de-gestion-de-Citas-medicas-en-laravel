@@ -14,6 +14,7 @@ class Doctor extends Model
         'nombre_paciente',
         'apellido_paciente',
         'correo_paciente',
+        'direccion_paciente',
         'telefono_paciente',
         'especialidad_paciente',
         'cedula_paciente',

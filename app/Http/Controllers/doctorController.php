@@ -40,6 +40,7 @@ class doctorController extends Controller
         $doctor->especialidad_paciente = $request->especialidad_paciente;
         $doctor->cedula_paciente = $request->cedula_paciente;
         $doctor->correo_paciente = $request->correo_paciente;
+        $doctor->direccion_paciente = $request->direccion_paciente;
         $doctor->fecha_nacimiento_paciente = $request->fecha_nacimiento_paciente;
         $doctor->fecha_reserva_paciente = $request->fecha_reserva_paciente;
         $doctor->hora_cita_paciente = $request->hora_cita_paciente;

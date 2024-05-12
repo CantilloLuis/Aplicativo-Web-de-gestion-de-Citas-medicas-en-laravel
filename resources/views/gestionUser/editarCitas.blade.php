@@ -51,6 +51,11 @@
                     </div>
 
                     <div class="col-12">
+                        <label for="direccion" class="form-label">Direccion <span style="color: red;">*</span></label>
+                        <input type="text" name="direccion" placeholder="Ingrese su direccion" class="form-control" id="direccion" required value="{{$cita->direccion}}">
+                    </div>
+
+                    <div class="col-12">
                         <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento <span style="color: red;">*</span></label>
                         <input type="date" name="fechaNacimiento" value="{{$cita->fechaNacimiento}}" class="form-control" id="fecha_nacimiento" required>
                     </div>

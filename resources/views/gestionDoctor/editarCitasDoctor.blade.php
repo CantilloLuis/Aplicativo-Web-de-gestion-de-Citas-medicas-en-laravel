@@ -45,6 +45,11 @@
                     </div>
 
                     <div class="col-12">
+                        <label for="direccion" class="form-label">Direccion <span style="color: red;">*</span></label>
+                        <input type="text" name="direccion" placeholder="Ingrese su direccion" class="form-control" id="direccion" required value="{{$cita->direccion_paciente}}">
+                    </div>
+
+                    <div class="col-12">
                         <label for="fecha_nacimiento_paciente" class="form-label">Fecha de nacimiento del paciente<span style="color: red;">*</span></label>
                         <input type="date" readonly value="{{$doctor->fecha_nacimiento_paciente}}" name=" fecha_nacimiento_paciente" class="form-control" id="fecha_nacimiento_paciente" required>
                     </div>

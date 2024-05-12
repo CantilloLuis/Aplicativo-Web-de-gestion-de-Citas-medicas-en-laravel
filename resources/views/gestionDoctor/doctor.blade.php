@@ -30,8 +30,23 @@
                             <select name="paciente" class="form-control" id="paciente" required>
                                 <option value="" disabled selected>Seleccione el paciente</option>
                                 @foreach($citas as $cita)
+                                @php
+                                $coincide = false; // Bandera para verificar si hay una coincidencia de descripción
+                                @endphp
+
+                                @foreach($doctors as $doctor)
+                                @if($doctor->descripcion_paciente == $cita->descripcion)
+                                @php
+                                $coincide = true; // Hay una coincidencia, establece la bandera a true
+                                break; // No es necesario seguir buscando, sal del bucle
+                                @endphp
+                                @endif
+                                @endforeach
+
+                                @if(!$coincide) {{-- Si no hay coincidencia, muestra la opción --}}
                                 @if($cita->especialidad == Auth::user()->especialidad)
                                 <option value="{{$cita->cedula}}">{{$cita->nombre}} {{$cita->apellido}}</option>
+                                @endif
                                 @endif
                                 @endforeach
                             </select>
@@ -64,6 +79,11 @@
                         <div class="col-12">
                             <label for="correo_paciente" class="form-label">Correo del paciente <span style="color: red;">*</span></label>
                             <input type="email" name="correo_paciente" placeholder="Ingrese sus correo" class="form-control" id="correo_paciente" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="direccion" class="form-label">Direccion <span style="color: red;">*</span></label>
+                            <input type="text" name="direccion" placeholder="Ingrese su direccion" class="form-control" id="direccion_paciente" required>
                         </div>
 
                         <div class="col-12">
@@ -122,8 +142,7 @@
                                 Hora</th>
                             <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 Editar</th>
-                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                Eliminar</th>
+
 
                         </tr>
                     </thead>
@@ -136,20 +155,20 @@
                             <td class="align-middle text-center text-sm">{{$doctor->especialidad_paciente}}</td>
                             <td class="align-middle text-center text-sm">{{$doctor->fecha_reserva_paciente}}</td>
                             <td class="align-middle text-center text-sm">{{$doctor->hora_cita_paciente}}</td>
-                            <td>
+                            <td class="align-middle text-center text-sm">
                                 <button type="submit" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#editarCitasDoctor{{$doctor->id}}">
                                     Editar Citas
                                 </button>
                                 @include('gestionDoctor.editarCitasDoctor')
                             </td>
-                            <td class="align-middle text-center text-sm">
+                            <!-- <td class="align-middle text-center text-sm">
                                 <form method="POST" action="{{url('/eliminarCita_con_Doctor' . '/' . $doctor->id)}}">
                                     {{method_field('DELETE')}}
                                     {{csrf_field('DELETE')}}
 
                                     <button type="submit" class="btn btn-danger">Eliminar</button>
                                 </form>
-                            </td>
+                            </td> -->
                         </tr>
                         @endforeach
                     </tbody>
@@ -183,6 +202,7 @@
                     $('#nombre_paciente').val(datosPaciente.nombre);
                     $('#apellido_paciente').val(datosPaciente.apellido);
                     $('#correo_paciente').val(datosPaciente.correo);
+                    $('#direccion_paciente').val(datosPaciente.direccion);
                     $('#telefono_paciente').val(datosPaciente.telefono);
                     $('#especialidad_paciente').val(datosPaciente.especialidad);
                     $('#cedula_paciente').val(datosPaciente.cedula);
