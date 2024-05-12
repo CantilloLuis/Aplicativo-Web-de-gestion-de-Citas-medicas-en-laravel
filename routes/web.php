@@ -32,7 +32,7 @@ use App\Http\Controllers\userManagementController;
 
 
 
-
+// Rutas para el registro, reset password y login del aplicativo.
 Route::get('../resources/views/vista.blade.php', function () {
 	return redirect('/dashboard');
 })->middleware('auth');
@@ -46,14 +46,20 @@ Route::get('/change-password', [ChangePassword::class, 'show'])->middleware('gue
 Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('guest')->name('change.perform');
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/vista', [vistaController::class, 'index'])->name('vista');
+
+//Rutas para la gestion de Citas del aplicativo
 Route::get('/gestionCitas', [gestionCitasController::class, 'index'])->name('gestionCitas');
 Route::post('/registrarCita', [gestionCitasController::class, 'store'])->name('registrarCitas');
 Route::delete('/eliminarCitas/{id}', [gestionCitasController::class, 'destroy'])->name('eliminarCitas');
 Route::resource('/actualizarCitas', gestionCitasController::class);
+
+//rutas para la gestion del usuario
 Route::get('/gestionUsuarios', [userManagementController::class, 'index'])->name('usuarios');
 Route::delete('/eliminarUsuario/{id}', [userManagementController::class, 'destroy'])->name('eliminarUsuario');
 Route::resource('/actualizarUsuario', userManagementController::class);
 Route::resource('/actualizarProfile', userProfileController::class);
+
+//rutas para la gestion del doctor
 Route::get('/doctor', [doctorController::class, 'index'])->name('doctor');
 Route::delete('/eliminarCita_con_Doctor/{id}', [doctorController::class, 'destroy'])->name('eliminarCitaDoctor');
 Route::resource('/actualizarCita_con_Doctor', doctorController::class);
@@ -61,13 +67,7 @@ Route::post('/registrarCitaMedico', [doctorController::class, 'store'])->name('r
 Route::get('/datosCitas', [gestionCitasController::class, 'getCitas'])->name('datosCitas');
 
 
-
-
-
-
-
-
-
+//rutas complementarias del aplicativo
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('/virtual-reality', [PageController::class, 'vr'])->name('virtual-reality');
 	Route::get('/rtl', [PageController::class, 'rtl'])->name('rtl');
