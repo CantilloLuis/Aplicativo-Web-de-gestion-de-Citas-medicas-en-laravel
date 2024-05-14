@@ -47,13 +47,13 @@ Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('
 Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/vista', [vistaController::class, 'index'])->name('vista');
 
-//Rutas para la gestion de Citas del aplicativo
+//Rutas para la gestion de Citas del aplicativo (ctualizar, eliminar, obtener)
 Route::get('/gestionCitas', [gestionCitasController::class, 'index'])->name('gestionCitas');
 Route::post('/registrarCita', [gestionCitasController::class, 'store'])->name('registrarCitas');
 Route::delete('/eliminarCitas/{id}', [gestionCitasController::class, 'destroy'])->name('eliminarCitas');
 Route::resource('/actualizarCitas', gestionCitasController::class);
 
-//rutas para la gestion del usuario
+//rutas para la gestion del usuario (Actualizar, eliminar, obtener)
 Route::get('/gestionUsuarios', [userManagementController::class, 'index'])->name('usuarios');
 Route::delete('/eliminarUsuario/{id}', [userManagementController::class, 'destroy'])->name('eliminarUsuario');
 Route::resource('/actualizarUsuario', userManagementController::class);
