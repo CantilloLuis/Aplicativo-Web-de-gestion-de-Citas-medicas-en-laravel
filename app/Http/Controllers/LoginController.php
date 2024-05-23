@@ -30,17 +30,17 @@ class LoginController extends Controller
             $request->session()->regenerate();
             if (Auth::user()->username == 'Admin' || Auth::user()->username == 'Administrador' || Auth::user()->username == 'administrador' || Auth::user()->username == 'admin') {
 
-                return redirect('dashboard');
+                return redirect('/dashboard');
             }
 
             if (Auth::user()->rol == 'Paciente') {
 
-                return redirect('gestionCitas');
+                return redirect('/gestionCitas');
             }
 
             if (Auth::user()->rol == 'Doctor') {
 
-                return redirect('doctor');
+                return redirect('/doctor');
             }
         }
 
@@ -54,7 +54,7 @@ class LoginController extends Controller
         Auth::logout();
 
         $request->session()->invalidate();
-        //$request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
         return redirect('/login');
     }
