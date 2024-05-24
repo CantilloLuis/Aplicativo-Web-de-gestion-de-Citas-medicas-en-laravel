@@ -35,10 +35,10 @@ use App\Http\Controllers\userManagementController;
 // Rutas para el registro, reset password y login del aplicativo.
 Route::get('../resources/views/vista.blade.php', function () {
 	return redirect('/dashboard');
-});
-Route::get('/register', [RegisterController::class, 'create'])->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->name('register.perform');
-Route::get('/login', [LoginController::class, 'show'])->name('login');
+})->middleware('auth');
+Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register.perform');
+Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
 Route::get('/reset-password', [ResetPassword::class, 'show'])->name('reset-password');
 Route::post('/reset-password', [ResetPassword::class, 'send'])->name('reset.perform');
