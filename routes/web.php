@@ -35,16 +35,16 @@ use App\Http\Controllers\userManagementController;
 // Rutas para el registro, reset password y login del aplicativo.
 Route::get('../resources/views/vista.blade.php', function () {
 	return redirect('/dashboard');
-})->middleware('auth');
-Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
-Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register.perform');
-Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->name('login');
-Route::post('/login', [LoginController::class, 'login'])->middleware('guest')->name('login.perform');
-Route::get('/reset-password', [ResetPassword::class, 'show'])->middleware('guest')->name('reset-password');
-Route::post('/reset-password', [ResetPassword::class, 'send'])->middleware('guest')->name('reset.perform');
-Route::get('/change-password', [ChangePassword::class, 'show'])->middleware('guest')->name('change-password');
-Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('guest')->name('change.perform');
-Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
+});
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.perform');
+Route::get('/login', [LoginController::class, 'show'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.perform');
+Route::get('/reset-password', [ResetPassword::class, 'show'])->name('reset-password');
+Route::post('/reset-password', [ResetPassword::class, 'send'])->name('reset.perform');
+Route::get('/change-password', [ChangePassword::class, 'show'])->name('change-password');
+Route::post('/change-password', [ChangePassword::class, 'update'])->name('change.perform');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 Route::get('/vista', [vistaController::class, 'index'])->name('vista');
 
 //Rutas para la gestion de Citas del aplicativo (ctualizar, eliminar, obtener)
