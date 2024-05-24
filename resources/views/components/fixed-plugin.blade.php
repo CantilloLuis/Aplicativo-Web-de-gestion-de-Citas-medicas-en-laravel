@@ -55,8 +55,7 @@
                     <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
                 </div>
             </div>
-            <a class="btn bg-gradient-dark w-100" href="" target="_blank">Visita nuestras redes sociales</a>
-            <a class="btn btn-outline-dark w-100" href="" target="_blank"></a>
+
 
         </div>
     </div>

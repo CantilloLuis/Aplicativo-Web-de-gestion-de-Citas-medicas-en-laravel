@@ -25,6 +25,7 @@
                     <!-- Formulario de cita -->
                     <form id="citaForm" method="POST" action="{{ route('registrarCitaMedico')}}" class="row g-3">
                         @csrf
+                        @method('POST')
                         <div class="col-md-6">
                             <label for="rol">Seleccione el paciente a evaluar</label>
                             <select name="paciente" class="form-control" id="paciente" required>

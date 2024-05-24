@@ -26,6 +26,7 @@
                     <!-- Formulario de cita -->
                     <form id="citaForm" method="POST" action="{{ route('registrarCitas')}}" class="row g-3">
                         @csrf
+                        @method('POST')
                         <div class="col-md-6">
                             <label for="nombre" class="form-label">Nombre <span style="color: red;">*</span></label>
                             <input type="text" name="nombre" placeholder="Ingrese su nombre" class="form-control" id="nombre" required>

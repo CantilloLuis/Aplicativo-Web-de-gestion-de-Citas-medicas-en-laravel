@@ -947,10 +947,14 @@
         padding: 100px;
         /* Solo para propósitos de demostración, ajusta según sea necesario */
     }
+    h1 {
+    text-transform: none; /* Esta línea asegura que no se cambie la capitalización original del texto */
+}
 </style>
 
 
 <body>
+
 
     @if (Route::has('login'))
         <header class="text-white bg-white body-font">
@@ -1007,63 +1011,50 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap w-full mb-20">
                 <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-black">Cultivando un Hogar
-                        Saludable: Claves para el Bienestar Familiar</h1>
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-black">Cultivando un Hogar Saludable: Claves para el Bienestar Familiar</h1>
                     <div class="h-1 w-20 bg-blue-500 rounded"></div>
                 </div>
-                <p class="lg:w-1/2 w-full leading-relaxed text-black text-opacity-90">En la vorágine de la vida moderna,
-                    donde las demandas diarias pueden ser abrumadoras, encontrar momentos para promover la salud y el
-                    bienestar en el hogar se convierte en una piedra angular para una familia feliz y saludable.</p>
+                <p class="lg:w-1/2 w-full leading-relaxed text-black text-opacity-90">En el vertiginoso ritmo de la vida moderna, donde las exigencias cotidianas pueden llegar a ser abrumadoras, encontrar espacios para promover la salud y el bienestar en el hogar se vuelve esencial para construir una familia feliz y saludable.</p>
             </div>
             <div class="flex flex-wrap -m-4">
-                <div class="xl:w-1/4 md:w-1/2 p-4">
+                <div class="xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-4">
                     <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                         <img class="h-40 rounded w-full object-cover object-center mb-6"
-                            src="https://www.homecare-aid.com/wp-content/uploads/Different-types-of-Home-Care-.jpg"
-                            alt="content">
-                        <h2 class="text-lg text-black font-medium title-font mb-4">Creando un Ambiente Saludable para
-                            Todos</h2>
-                        <p class="leading-relaxed text-black text-base">Mantener un entorno saludable en el hogar es
-                            fundamental para el bienestar de toda la familia. </p>
+                             src="{{ asset('images/Ambiente Saludable.jpeg') }}"
+                             alt="content">
+                        <h2 class="text-lg text-black font-medium title-font mb-4">Creando un ambiente saludable para todos.</h2>
+                        <p class="leading-relaxed text-black text-base">Mantener un entorno saludable en el hogar es fundamental para el bienestar de toda la familia.</p>
                     </div>
                 </div>
-
-                <div class="xl:w-1/4 md:w-1/2 p-4">
+                <div class="xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-4">
                     <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                         <img class="h-40 rounded w-full object-cover object-center mb-6"
-                            src="https://clasarnoticias.com/wp-content/uploads/2022/09/fa3545d3-d4e7-447b-b0fe-5a9fe288aded.jpg"
-                            alt="content">
-                        <h2 class="text-lg text-black font-medium title-font mb-4">La Importancia del Autocuidado en el
-                            Hogar</h2>
-                        <p class="leading-relaxed text-black text-base">En medio de las exigencias diarias, a menudo
-                            olvidamos cuidar de nosotros mismos.</p>
+                             src="{{ asset('images/Autocuidado.jpg') }}"
+                             alt="content">
+                        <h2 class="text-lg text-black font-medium title-font mb-4">La importancia del autocuidado en el hogar.</h2>
+                        <p class="leading-relaxed text-black text-base">En medio de las exigencias diarias, a menudo olvidamos cuidar de nosotros mismos.</p>
                     </div>
                 </div>
-
-                <div class="xl:w-1/4 md:w-1/2 p-4">
+                <div class="xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-4">
                     <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                         <img class="h-40 rounded w-full object-cover object-center mb-6"
-                            src="https://www.fcv.org/co/images/blog/2023/febrero/como-establecer-una-rutina-y-crear-habitos-saludables-1.webp"
-                            alt="content">
-                        <h2 class="text-lg text-black font-medium title-font mb-4">Construyendo Rutinas Saludables en
-                            Casa</h2>
-                        <p class="leading-relaxed text-black text-base">Las rutinas saludables no solo benefician
-                            nuestro cuerpo, sino también nuestra mente. </p>
+                             src="{{ asset('images/Rutinas Saludables.jpg') }}"
+                             alt="content">
+                        <h2 class="text-lg text-black font-medium title-font mb-4"> Construyendo rutinas saludables en casa.</h2>
+                        <p class="leading-relaxed text-black text-base">Las rutinas saludables no solo benefician nuestro cuerpo, sino también, nuestra mente.</p>
                     </div>
                 </div>
-
-                <div class="xl:w-1/4 md:w-1/2 p-4">
+                <div class="xl:w-1/4 lg:w-1/3 md:w-1/2 w-full p-4">
                     <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
                         <img class="h-40 rounded w-full object-cover object-center mb-6"
-                            src="https://lirp.cdn-website.com/md/unsplash/dms3rep/multi/opt/photo-1581952976147-5a2d15560349-960w.jpg"
-                            alt="content">
-                        <h2 class="text-lg text-black font-medium title-font mb-4">Fomentando la Conexión Familiar a
-                            través de la Salud en Casa</h2>
-                        <p class="leading-relaxed text-black text-base">La salud en el hogar va más allá del bienestar
-                            individual; también se trata de fortalecer los lazos familiares.</p>
+                             src="{{ asset('images/Conexión Familiar.jpg') }}"
+                             alt="content">
+                        <h2 class="text-lg text-black font-medium title-font mb-4">Promoviendo el Vínculo Familiar con la Salud.</h2>
+                        <p class="leading-relaxed text-black text-base">La salud en el hogar va más allá del bienestar; también, se trata de fortalecer los lazos familiares.</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -1095,55 +1086,35 @@
 
 <script type="text/javascript">
     const text =
-        "En un mundo cada vez más ocupado y desafiante, la importancia del cuidado en el hogar, o 'homecare', está emergiendo como una práctica crucial para mantener la salud y el bienestar. Homecare abarca una amplia gama de servicios y actividades diseñadas para atender las necesidades médicas y de vida diaria de las personas en su propio hogar.";
-    const text2 = 'Importancia de Homecare para una Vida Saludable';
+        "En un mundo cada vez más ocupado y desafiante, la importancia del cuidado en el hogar, o 'homecare', está emergiendo como una práctica crucial para mantener la salud y el bienestar. El homecare abarca una amplia gama de servicios y actividades diseñadas para atender las necesidades médicas y de vida diaria de las personas en su propio hogar.";
+    const text2 = 'IMPORTANCIA DE HOMECARE PARA UNA VIDA SALUDABLE';
+
     // Función para autotipear el texto
-    function autoType() {
-        const element = document.getElementById('auto-type');
+    function autoType(element, text, intervalTime) {
         let index = 0;
         const interval = setInterval(function() {
             element.textContent += text[index++];
             if (index >= text.length) {
                 clearInterval(interval); // Detiene el intervalo cuando se completa el texto
-                setTimeout(function() {
-                    element.textContent = ''; // Borra el texto después de 10 segundos
-                    setTimeout(autoType, 0); // Comienza el autotipeo nuevamente
-                }, 10000); // Espera 10 segundos antes de borrar y volver a escribir
             }
-        }, 50); // Velocidad de escritura (milisegundos)
+        }, intervalTime); // Velocidad de escritura (milisegundos)
     }
 
-    // Llama a la función para comenzar el autotipeo
-    autoType();
+    // Obtener los elementos y comenzar el autotipeo
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const element1 = document.getElementById('auto-type');
+        const element2 = document.getElementById('auto-type2');
 
-
-    // Función para autotipear el texto
-    function autoType2() {
-        const element = document.getElementById('auto-type2');
-        element.classList.add('big-text'); // Agrega la clase para aumentar el tamaño del texto
-
-        let index = 0;
-        const interval = setInterval(function() {
-            element.textContent += text2[index++];
-            if (index >= text2.length) {
-                clearInterval(interval); // Detiene el intervalo cuando se completa el texto
-                setTimeout(function() {
-                    element.textContent = ''; // Borra el texto después de 10 segundos
-                    setTimeout(autoType, 0); // Comienza el autotipeo nuevamente
-                }, 10000); // Espera 10 segundos antes de borrar y volver a escribir
-            }
-        }, 50); // Velocidad de escritura (milisegundos)
-    }
-
-    // Llama a la función para comenzar el autotipeo
-    autoType2();
+        autoType(element1, text, 50);
+        autoType(element2, text2, 50);
+    });
 </script>
 
 <style>
     .big-text {
-        font-size: 24px;
-        /* Cambia el tamaño del texto según lo necesites */
-    }
+            font-size: 24px;
+            /* Cambia el tamaño del texto según lo necesites */
+        }
 </style>
 
 </div>
